@@ -4,6 +4,13 @@
         "uninstalled": []
     },
     "config_munge": {},
-    "installed_plugins": {},
+    "installed_plugins": {
+        "com.wancheng.customcamera": {
+            "PACKAGE_NAME": "com.sampleapp"
+        },
+        "org.devgirl.calendar": {
+            "PACKAGE_NAME": "com.sampleapp"
+        }
+    },
     "dependent_plugins": {}
 }

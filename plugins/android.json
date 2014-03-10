@@ -3,7 +3,35 @@
         "installed": [],
         "uninstalled": []
     },
-    "config_munge": {},
-    "installed_plugins": {},
+    "config_munge": {
+        "res/xml/config.xml": {
+            "/*": {
+                "<feature name=\"ForegroundCameraLauncher\"><param name=\"android-package\" value=\"com.wancheng.customcamera.ForegroundCameraLauncher\" /></feature>": 1,
+                "<feature name=\"Calendar\"><param name=\"android-package\" value=\"org.devgirl.calendar.Calendar\" /></feature>": 1
+            }
+        },
+        "AndroidManifest.xml": {
+            "/*": {
+                "<uses-permission android:name=\"android.permission.CAMERA\" />": 1,
+                "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />": 1,
+                "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />": 1,
+                "<uses-feature android:name=\"android.hardware.camera\" />": 1,
+                "<uses-feature android:name=\"android.hardware.camera.autofocus\" />": 1
+            },
+            "/manifest/application": {
+                "<activity android:label=\"ForegroundCameraPlugin\" android:name=\"com.wancheng.customcamera.CameraActivity\" android:screenOrientation=\"portrait\" />": 1,
+                "<activity android:label=\"ForegroundCameraPlugin\" android:name=\"com.wancheng.customcamera.VideoCaptureActivity\" android:screenOrientation=\"portrait\" />": 1,
+                "<activity android:label=\"ForegroundCameraPlugin\" android:name=\"com.wancheng.customcamera.AudioRecordActivity\" android:screenOrientation=\"portrait\" />": 1
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.wancheng.customcamera": {
+            "PACKAGE_NAME": "com.sampleapp"
+        },
+        "org.devgirl.calendar": {
+            "PACKAGE_NAME": "com.sampleapp"
+        }
+    },
     "dependent_plugins": {}
 }

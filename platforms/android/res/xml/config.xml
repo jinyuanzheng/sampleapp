@@ -4,6 +4,12 @@
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
+    <feature name="ForegroundCameraLauncher">
+        <param name="android-package" value="com.wancheng.customcamera.ForegroundCameraLauncher" />
+    </feature>
+    <feature name="Calendar">
+        <param name="android-package" value="org.devgirl.calendar.Calendar" />
+    </feature>
     <name>sampleapp</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

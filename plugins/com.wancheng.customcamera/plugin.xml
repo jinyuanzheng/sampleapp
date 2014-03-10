@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.wancheng.customcamera"
+      version="0.1.0">
+    <name>CustomCamera</name>
+    <description>PhoneGap CustomCamera Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,camera</keywords>
+
+
+    <js-module src="www/customcamera.js" name="CustomCamera">
+        <clobbers target="window.CustomCamera" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+		    <feature name="ForegroundCameraLauncher">
+		        <param name="android-package" value="com.wancheng.customcamera.ForegroundCameraLauncher" />
+    		</feature>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/*">
+	        <uses-permission android:name="android.permission.CAMERA" />
+		    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+		    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+	        <uses-feature android:name="android.hardware.camera" />
+		    <uses-feature android:name="android.hardware.camera.autofocus" />
+	    </config-file>
+	    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+	        <activity android:label="ForegroundCameraPlugin" android:name="com.wancheng.customcamera.CameraActivity" android:screenOrientation="portrait" />
+	        <activity android:label="ForegroundCameraPlugin" android:name="com.wancheng.customcamera.VideoCaptureActivity" android:screenOrientation="portrait" />
+	        <activity android:label="ForegroundCameraPlugin" android:name="com.wancheng.customcamera.AudioRecordActivity" android:screenOrientation="portrait" />
+	    </config-file>
+
+        <source-file src="src/android/java/AudioRecordActivity.java" target-dir="src/com/wancheng/customcamera" />      
+        <source-file src="src/android/java/CameraActivity.java" target-dir="src/com/wancheng/customcamera" />      
+        <source-file src="src/android/java/ForegroundCameraLauncher.java" target-dir="src/com/wancheng/customcamera" />      
+        <source-file src="src/android/java/ForegroundCameraPreview.java" target-dir="src/com/wancheng/customcamera" />      
+        <source-file src="src/android/java/VideoCaptureActivity.java" target-dir="src/com/wancheng/customcamera" />
+        
+        <resource-file src="src/android/layout/audiocapture.xml" target="res/layout/audiocapture.xml" />
+        <resource-file src="src/android/layout/foregroundcameraplugin.xml" target="res/layout/foregroundcameraplugin.xml" />
+        <resource-file src="src/android/layout/videocapture.xml" target="res/layout/videocapture.xml" />
+
+        <resource-file src="src/android/image/back_to_picture_btn.png" target="res/drawable-hdpi/back_to_picture_btn.png" />
+        <resource-file src="src/android/image/buttons_back.png" target="res/drawable-hdpi/buttons_back.png" />
+        <resource-file src="src/android/image/cancel.png" target="res/drawable-hdpi/cancel.png" />
+        <resource-file src="src/android/image/capture_video.png" target="res/drawable-hdpi/capture_video.png" />
+        <resource-file src="src/android/image/forward_btn.png" target="res/drawable-hdpi/forward_btn.png" />
+        <resource-file src="src/android/image/photo_capture.png" target="res/drawable-hdpi/photo_capture.png" />
+        <resource-file src="src/android/image/photo_library.png" target="res/drawable-hdpi/photo_library.png" />
+        <resource-file src="src/android/image/preview_back.png" target="res/drawable-hdpi/preview_back.png" />
+        <resource-file src="src/android/image/video_capture_btn.png" target="res/drawable-hdpi/video_capture_btn.png" />
+        
+	</platform>          
+</plugin>

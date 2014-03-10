@@ -9,6 +9,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:label="ForegroundCameraPlugin" android:name="com.wancheng.customcamera.CameraActivity" android:screenOrientation="portrait" />
+        <activity android:label="ForegroundCameraPlugin" android:name="com.wancheng.customcamera.VideoCaptureActivity" android:screenOrientation="portrait" />
+        <activity android:label="ForegroundCameraPlugin" android:name="com.wancheng.customcamera.AudioRecordActivity" android:screenOrientation="portrait" />
     </application>
     <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 </manifest>
